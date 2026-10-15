@@ -1,0 +1,9 @@
+,validation_MASE
+"HGB(lr=0.05,leaves=8,iter=100)",1.06192
+"HGB(lr=0.05,leaves=8,iter=300)",1.02760
+"HGB(lr=0.05,leaves=31,iter=100)",0.99037
+"HGB(lr=0.05,leaves=31,iter=300)",0.97441
+"HGB(lr=0.1,leaves=8,iter=100)",1.05507
+"HGB(lr=0.1,leaves=8,iter=300)",1.01186
+"HGB(lr=0.1,leaves=31,iter=100)",0.98637
+"HGB(lr=0.1,leaves=31,iter=300)",0.98250

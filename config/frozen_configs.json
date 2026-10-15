@@ -1,0 +1,538 @@
+{
+  "protocol_tag": "protocol-v1",
+  "created_with_commit": "46d47d2894308880ce04cb566f5ab3e0b4a559bc",
+  "libraries": {
+    "python": "3.11.2",
+    "numpy": "2.4.6",
+    "pandas": "3.0.6",
+    "scipy": "1.17.1",
+    "statsmodels": "0.15.0",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.11.2"
+  },
+  "note": "Chosen on the validation window only (protocol sections 5, 6.4, 6.7). Frozen before the confirmatory run; the confirmatory script refuses to run if this file is not committed.",
+  "monthly": {
+    "ml_g": {
+      "config": {
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 31,
+        "max_iter": 300
+      },
+      "name": "HGB(lr=0.05,leaves=31,iter=300)",
+      "validation_scores": {
+        "HGB(lr=0.05,leaves=8,iter=100)": 0.5649166115125431,
+        "HGB(lr=0.05,leaves=8,iter=300)": 0.5392872841830496,
+        "HGB(lr=0.05,leaves=31,iter=100)": 0.5495605579919287,
+        "HGB(lr=0.05,leaves=31,iter=300)": 0.5363029513987582,
+        "HGB(lr=0.1,leaves=8,iter=100)": 0.5539885384124618,
+        "HGB(lr=0.1,leaves=8,iter=300)": 0.5406706395315116,
+        "HGB(lr=0.1,leaves=31,iter=100)": 0.5542490272327575,
+        "HGB(lr=0.1,leaves=31,iter=300)": 0.5676064615517923
+      }
+    },
+    "series": {
+      "RSAFSNA": {
+        "ETS": "ETS(M,A,M)",
+        "ETS_val_score": 0.41516055340163904,
+        "ARIMA": "ARIMA(2,1,1)x(1,1,1)",
+        "ARIMA_val_score": 0.45059225636129263,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "RSAFS": {
+        "ETS": "ETS(M,A,M)",
+        "ETS_val_score": 0.3473382479489467,
+        "ARIMA": "ARIMA(2,1,1)x(0,0,0)",
+        "ARIMA_val_score": 0.35211936350924156,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "RSMVPDN": {
+        "ETS": "ETS(A,Ad,A)",
+        "ETS_val_score": 0.2848959438181994,
+        "ARIMA": "ARIMA(2,1,1)x(1,1,1)",
+        "ARIMA_val_score": 0.4028727191751823,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "RSGCSN": {
+        "ETS": "ETS(M,A,A)",
+        "ETS_val_score": 0.600327300642692,
+        "ARIMA": "ARIMA(2,1,1)x(1,1,1)",
+        "ARIMA_val_score": 0.5278817309332913,
+        "STAT_star": "ARIMA",
+        "n_failed_configs": 0
+      },
+      "RSCCASN": {
+        "ETS": "ETS(M,N,A)",
+        "ETS_val_score": 0.505322758198415,
+        "ARIMA": "ARIMA(0,1,1)x(1,1,1)",
+        "ARIMA_val_score": 0.7724843232865927,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "RSNSRN": {
+        "ETS": "ETS(M,A,M)",
+        "ETS_val_score": 1.1712685109668453,
+        "ARIMA": "ARIMA(0,1,1)x(1,1,1)",
+        "ARIMA_val_score": 1.2417854676665105,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "RSBMGESDN": {
+        "ETS": "ETS(A,A,M)",
+        "ETS_val_score": 0.5494093526524932,
+        "ARIMA": "ARIMA(0,1,1)x(1,1,1)",
+        "ARIMA_val_score": 0.5998419302279151,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "RSFSDPN": {
+        "ETS": "ETS(A,A,M)",
+        "ETS_val_score": 0.6222115537195416,
+        "ARIMA": "ARIMA(0,1,1)x(0,1,1)",
+        "ARIMA_val_score": 0.6339852970216298,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "RSGASSN": {
+        "ETS": "ETS(A,A,M)",
+        "ETS_val_score": 0.5471994737042681,
+        "ARIMA": "ARIMA(1,1,1)x(0,1,1)",
+        "ARIMA_val_score": 0.7044872548354777,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "RSFHFSN": {
+        "ETS": "ETS(A,N,A)",
+        "ETS_val_score": 0.43878542722728753,
+        "ARIMA": "ARIMA(0,1,1)x(1,1,1)",
+        "ARIMA_val_score": 0.5201808161525513,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "INDPRO": {
+        "ETS": "ETS(M,Ad,N)",
+        "ETS_val_score": 0.25923741263911965,
+        "ARIMA": "ARIMA(2,1,1)x(0,1,1)",
+        "ARIMA_val_score": 0.27007727040867957,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "IPMAN": {
+        "ETS": "ETS(A,Ad,N)",
+        "ETS_val_score": 0.2358517780100305,
+        "ARIMA": "ARIMA(2,1,1)x(0,0,0)",
+        "ARIMA_val_score": 0.250055475293318,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "IPB50001N": {
+        "ETS": "ETS(A,N,A)",
+        "ETS_val_score": 0.3466296778943921,
+        "ARIMA": "ARIMA(1,1,1)x(1,1,1)",
+        "ARIMA_val_score": 0.3037103713315118,
+        "STAT_star": "ARIMA",
+        "n_failed_configs": 0
+      },
+      "IPG2211N": {
+        "ETS": "ETS(A,N,M)",
+        "ETS_val_score": 0.7085888566993198,
+        "ARIMA": "ARIMA(1,1,1)x(0,1,1)",
+        "ARIMA_val_score": 0.7971356013360543,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "IPG3361T3N": {
+        "ETS": "ETS(A,Ad,A)",
+        "ETS_val_score": 0.44369322428411834,
+        "ARIMA": "ARIMA(1,1,1)x(0,1,1)",
+        "ARIMA_val_score": 0.5124102547683171,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "CPIAUCNS": {
+        "ETS": "ETS(A,A,M)",
+        "ETS_val_score": 0.16799721741045665,
+        "ARIMA": "ARIMA(2,1,1)x(0,1,1)",
+        "ARIMA_val_score": 0.1845698117117008,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "CPILFESL": {
+        "ETS": "ETS(M,A,M)",
+        "ETS_val_score": 0.09202465091796125,
+        "ARIMA": "ARIMA(1,1,1)x(0,0,0)",
+        "ARIMA_val_score": 0.09939171757992153,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "CUUR0000SAF11": {
+        "ETS": "ETS(M,A,N)",
+        "ETS_val_score": 0.20987270427777355,
+        "ARIMA": "ARIMA(2,1,1)x(0,1,1)",
+        "ARIMA_val_score": 0.14343476974397407,
+        "STAT_star": "ARIMA",
+        "n_failed_configs": 0
+      },
+      "CUUR0000SEHA": {
+        "ETS": "ETS(A,A,M)",
+        "ETS_val_score": 0.09209870022294252,
+        "ARIMA": "ARIMA(2,1,1)x(1,1,1)",
+        "ARIMA_val_score": 0.0793395165535319,
+        "STAT_star": "ARIMA",
+        "n_failed_configs": 0
+      },
+      "CUUR0000SETB01": {
+        "ETS": "ETS(M,A,M)",
+        "ETS_val_score": 0.43783798354513753,
+        "ARIMA": "ARIMA(2,1,1)x(0,1,1)",
+        "ARIMA_val_score": 0.48918669839657475,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "CUUR0000SEHF01": {
+        "ETS": "ETS(M,N,A)",
+        "ETS_val_score": 0.3638809733115289,
+        "ARIMA": "ARIMA(1,1,1)x(0,1,1)",
+        "ARIMA_val_score": 0.43424664050534856,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "HOUST": {
+        "ETS": "ETS(A,N,N)",
+        "ETS_val_score": 0.4366034295175513,
+        "ARIMA": "ARIMA(0,1,1)x(0,0,0)",
+        "ARIMA_val_score": 0.4367912428460358,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "HOUSTNSA": {
+        "ETS": "ETS(M,N,A)",
+        "ETS_val_score": 0.36370942701673775,
+        "ARIMA": "ARIMA(0,1,1)x(1,1,1)",
+        "ARIMA_val_score": 0.4592555515208119,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "PERMIT": {
+        "ETS": "ETS(M,A,A)",
+        "ETS_val_score": 0.28638693923458536,
+        "ARIMA": "ARIMA(0,1,1)x(0,0,0)",
+        "ARIMA_val_score": 0.28883995208180513,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "TOTALSA": {
+        "ETS": "ETS(M,N,M)",
+        "ETS_val_score": 0.30470571783010114,
+        "ARIMA": "ARIMA(1,1,1)x(1,1,1)",
+        "ARIMA_val_score": 0.33907106290837796,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "TOTALNSA": {
+        "ETS": "ETS(M,Ad,A)",
+        "ETS_val_score": 0.5388356375422707,
+        "ARIMA": "ARIMA(1,1,1)x(0,1,1)",
+        "ARIMA_val_score": 0.6249951170007283,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "PAYNSA": {
+        "ETS": "ETS(M,A,M)",
+        "ETS_val_score": 0.06516291570155197,
+        "ARIMA": "ARIMA(0,1,1)x(1,1,1)",
+        "ARIMA_val_score": 0.07350373239537669,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "UNRATENSA": {
+        "ETS": "ETS(M,Ad,M)",
+        "ETS_val_score": 0.18686726056931544,
+        "ARIMA": "ARIMA(0,1,1)x(0,1,1)",
+        "ARIMA_val_score": 0.16584848458453721,
+        "STAT_star": "ARIMA",
+        "n_failed_configs": 0
+      },
+      "TRFVOLUSM227NFWA": {
+        "ETS": "ETS(M,Ad,A)",
+        "ETS_val_score": 0.4342765807430542,
+        "ARIMA": "ARIMA(1,1,0)x(0,1,1)",
+        "ARIMA_val_score": 0.394968773766487,
+        "STAT_star": "ARIMA",
+        "n_failed_configs": 0
+      },
+      "M2SL": {
+        "ETS": "ETS(A,A,N)",
+        "ETS_val_score": 0.15737706678603172,
+        "ARIMA": "ARIMA(1,1,1)x(0,1,1)",
+        "ARIMA_val_score": 0.1398890265244921,
+        "STAT_star": "ARIMA",
+        "n_failed_configs": 0
+      }
+    }
+  },
+  "daily": {
+    "ml_g": {
+      "config": {
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 31,
+        "max_iter": 300
+      },
+      "name": "HGB(lr=0.05,leaves=31,iter=300)",
+      "validation_scores": {
+        "HGB(lr=0.05,leaves=8,iter=100)": 1.0619195286994307,
+        "HGB(lr=0.05,leaves=8,iter=300)": 1.0275962125939637,
+        "HGB(lr=0.05,leaves=31,iter=100)": 0.990369666427561,
+        "HGB(lr=0.05,leaves=31,iter=300)": 0.9744067559964759,
+        "HGB(lr=0.1,leaves=8,iter=100)": 1.0550652613199962,
+        "HGB(lr=0.1,leaves=8,iter=300)": 1.0118627791200723,
+        "HGB(lr=0.1,leaves=31,iter=100)": 0.9863746325194414,
+        "HGB(lr=0.1,leaves=31,iter=300)": 0.9824952461898138
+      }
+    },
+    "series": {
+      "T2": {
+        "ETS": "ETS(M,A,A)",
+        "ETS_val_score": 0.6026572791620584,
+        "ARIMA": "ARIMA(0,1,1)x(0,0,0)",
+        "ARIMA_val_score": 0.6173236842055199,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "T10": {
+        "ETS": "ETS(M,A,N)",
+        "ETS_val_score": 0.8578248474454269,
+        "ARIMA": "ARIMA(1,1,1)x(0,0,0)",
+        "ARIMA_val_score": 0.8724399836154086,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "T20": {
+        "ETS": "ETS(M,N,A)",
+        "ETS_val_score": 0.9830496975750439,
+        "ARIMA": "ARIMA(2,1,1)x(1,1,1)",
+        "ARIMA_val_score": 0.8927771675968357,
+        "STAT_star": "ARIMA",
+        "n_failed_configs": 0
+      },
+      "T29": {
+        "ETS": "ETS(M,Ad,A)",
+        "ETS_val_score": 0.9582547274758955,
+        "ARIMA": "ARIMA(1,1,1)x(0,1,1)",
+        "ARIMA_val_score": 1.0158333291468442,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "T37": {
+        "ETS": "ETS(M,N,A)",
+        "ETS_val_score": 0.6429839817813106,
+        "ARIMA": "ARIMA(2,1,1)x(1,1,1)",
+        "ARIMA_val_score": 0.9461676300221493,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "T44": {
+        "ETS": "ETS(A,Ad,M)",
+        "ETS_val_score": 0.7288379198747232,
+        "ARIMA": "ARIMA(2,1,1)x(1,1,1)",
+        "ARIMA_val_score": 0.644170434109571,
+        "STAT_star": "ARIMA",
+        "n_failed_configs": 0
+      },
+      "T53": {
+        "ETS": "ETS(A,N,M)",
+        "ETS_val_score": 1.7537396937493726,
+        "ARIMA": "ARIMA(1,1,1)x(1,1,1)",
+        "ARIMA_val_score": 1.6995120778834552,
+        "STAT_star": "ARIMA",
+        "n_failed_configs": 0
+      },
+      "T63": {
+        "ETS": "ETS(M,A,M)",
+        "ETS_val_score": 1.0268411710274823,
+        "ARIMA": "ARIMA(0,1,1)x(0,1,1)",
+        "ARIMA_val_score": 1.0269338783335553,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "T71": {
+        "ETS": "ETS(A,A,M)",
+        "ETS_val_score": 0.7812890266719815,
+        "ARIMA": "ARIMA(2,1,1)x(0,0,0)",
+        "ARIMA_val_score": 0.7983116158271207,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "T79": {
+        "ETS": "ETS(M,Ad,A)",
+        "ETS_val_score": 0.7137500878377776,
+        "ARIMA": "ARIMA(2,1,1)x(0,1,1)",
+        "ARIMA_val_score": 0.6442641596204731,
+        "STAT_star": "ARIMA",
+        "n_failed_configs": 0
+      },
+      "T87": {
+        "ETS": "ETS(M,N,M)",
+        "ETS_val_score": 1.0147114590415185,
+        "ARIMA": "ARIMA(0,1,1)x(1,1,1)",
+        "ARIMA_val_score": 0.993670740817041,
+        "STAT_star": "ARIMA",
+        "n_failed_configs": 0
+      },
+      "T95": {
+        "ETS": "ETS(M,N,N)",
+        "ETS_val_score": 0.662254794739241,
+        "ARIMA": "ARIMA(1,1,1)x(1,1,1)",
+        "ARIMA_val_score": 0.8227914042889392,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "T105": {
+        "ETS": "ETS(A,A,N)",
+        "ETS_val_score": 0.6489575045355178,
+        "ARIMA": "ARIMA(1,1,0)x(0,1,1)",
+        "ARIMA_val_score": 0.6684844060818369,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "T116": {
+        "ETS": "ETS(M,A,N)",
+        "ETS_val_score": 1.1376051972786114,
+        "ARIMA": "ARIMA(2,1,1)x(0,1,1)",
+        "ARIMA_val_score": 1.1550003454528055,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "T131": {
+        "ETS": "ETS(M,N,A)",
+        "ETS_val_score": 1.9666996469661364,
+        "ARIMA": "ARIMA(1,1,1)x(0,0,0)",
+        "ARIMA_val_score": 2.273730574758008,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "T145": {
+        "ETS": "ETS(M,A,N)",
+        "ETS_val_score": 0.9329590618563349,
+        "ARIMA": "ARIMA(1,1,1)x(0,0,0)",
+        "ARIMA_val_score": 1.0061958523354317,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "T162": {
+        "ETS": "ETS(M,Ad,N)",
+        "ETS_val_score": 0.6970221791262616,
+        "ARIMA": "ARIMA(1,1,1)x(0,0,0)",
+        "ARIMA_val_score": 0.7702236245214629,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "T175": {
+        "ETS": "ETS(M,Ad,N)",
+        "ETS_val_score": 1.0305119005070174,
+        "ARIMA": "ARIMA(1,1,1)x(0,0,0)",
+        "ARIMA_val_score": 1.2832936461485802,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "T189": {
+        "ETS": "ETS(M,A,A)",
+        "ETS_val_score": 0.5627728373303573,
+        "ARIMA": "ARIMA(2,1,1)x(1,1,1)",
+        "ARIMA_val_score": 0.4189383299236149,
+        "STAT_star": "ARIMA",
+        "n_failed_configs": 0
+      },
+      "T198": {
+        "ETS": "ETS(M,Ad,N)",
+        "ETS_val_score": 0.778891679996233,
+        "ARIMA": "ARIMA(1,1,1)x(0,0,0)",
+        "ARIMA_val_score": 0.8978659253733365,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "T207": {
+        "ETS": "ETS(M,Ad,N)",
+        "ETS_val_score": 0.9913052322993711,
+        "ARIMA": "ARIMA(1,1,1)x(0,0,0)",
+        "ARIMA_val_score": 1.026752565955499,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "T215": {
+        "ETS": "ETS(M,Ad,M)",
+        "ETS_val_score": 0.74198514813937,
+        "ARIMA": "ARIMA(2,1,1)x(1,1,1)",
+        "ARIMA_val_score": 0.691971055205243,
+        "STAT_star": "ARIMA",
+        "n_failed_configs": 0
+      },
+      "T222": {
+        "ETS": "ETS(M,Ad,N)",
+        "ETS_val_score": 1.180810374350125,
+        "ARIMA": "ARIMA(1,1,1)x(0,0,0)",
+        "ARIMA_val_score": 1.432274784929858,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "T231": {
+        "ETS": "ETS(M,Ad,N)",
+        "ETS_val_score": 0.938687277357275,
+        "ARIMA": "ARIMA(1,1,1)x(0,0,0)",
+        "ARIMA_val_score": 0.8926532701872814,
+        "STAT_star": "ARIMA",
+        "n_failed_configs": 0
+      },
+      "T241": {
+        "ETS": "ETS(M,Ad,N)",
+        "ETS_val_score": 0.6251597136378716,
+        "ARIMA": "ARIMA(1,1,1)x(0,0,0)",
+        "ARIMA_val_score": 0.6360352742986037,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "T250": {
+        "ETS": "ETS(M,Ad,N)",
+        "ETS_val_score": 1.0841318582982344,
+        "ARIMA": "ARIMA(1,1,1)x(0,0,0)",
+        "ARIMA_val_score": 1.1599000653945246,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "T257": {
+        "ETS": "ETS(M,Ad,N)",
+        "ETS_val_score": 0.8291252287741772,
+        "ARIMA": "ARIMA(2,1,1)x(1,1,1)",
+        "ARIMA_val_score": 0.6403632701690654,
+        "STAT_star": "ARIMA",
+        "n_failed_configs": 0
+      },
+      "T265": {
+        "ETS": "ETS(M,N,M)",
+        "ETS_val_score": 1.4466019298163013,
+        "ARIMA": "ARIMA(1,1,1)x(0,0,0)",
+        "ARIMA_val_score": 1.1373969162817095,
+        "STAT_star": "ARIMA",
+        "n_failed_configs": 0
+      },
+      "T274": {
+        "ETS": "ETS(M,Ad,N)",
+        "ETS_val_score": 1.2497684397885656,
+        "ARIMA": "ARIMA(1,1,1)x(0,0,0)",
+        "ARIMA_val_score": 1.300780997333802,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      },
+      "T283": {
+        "ETS": "ETS(M,Ad,N)",
+        "ETS_val_score": 1.379122410032737,
+        "ARIMA": "ARIMA(1,1,1)x(0,0,0)",
+        "ARIMA_val_score": 1.3977511652156622,
+        "STAT_star": "ETS",
+        "n_failed_configs": 0
+      }
+    }
+  }
+}
