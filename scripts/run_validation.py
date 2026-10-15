@@ -95,6 +95,14 @@ def main() -> None:
             frozen[s] = {"ml_g": {"config": r["ml_global"]["chosen"], "name": r["ml_global"]["chosen_name"],
                                   "validation_scores": r["ml_global"]["scores"]},
                          "series": {n: r["series"][n]["selected"] for n in results[s]["series"]}}
+        import pandas as pd
+        vdir = ROOT / "results" / "validation"
+        vdir.mkdir(parents=True, exist_ok=True)
+        for s, r in results.items():
+            pd.DataFrame({n: v["scores"] for n, v in r["series"].items()}).T.to_csv(
+                vdir / f"config_scores_{s}.csv", float_format="%.5f")
+            pd.Series(r["ml_global"]["scores"], name="validation_MASE").to_csv(
+                vdir / f"ml_g_scores_{s}.csv", float_format="%.5f")
         write_json_atomic(ROOT / "config" / "frozen_configs.json", frozen)
         print("wrote config/frozen_configs.json")
 
