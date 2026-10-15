@@ -157,7 +157,7 @@ def synthetic_forecast_table(ml_err=0.5, stat_err=2.0, snaive_err=1.0, n_series=
                     w = lambda hit: err[m] + 0.5 if hit else err[m] - 0.5          # noqa: E731
                     cf_w80, cf_w95, mb_w80, mb_w95 = w(hit_cf80), w(hit_cf95), w(hit_mb80), w(hit_mb95)
                     rows.append({"series": f"S{i}", "model": m, "origin": o, "h": h, "actual": 100.0, "point": f,
-                                 "s1": 1.0, "cf_lo80": f - cf_w80, "cf_hi80": f + cf_w80, "cf_lo95": f - cf_w95, "cf_hi95": f + cf_w95,
+                                 "s1": 1.0, "s2": 1.0, "cf_lo80": f - cf_w80, "cf_hi80": f + cf_w80, "cf_lo95": f - cf_w95, "cf_hi95": f + cf_w95,
                                  "mb_lo80": f - mb_w80 if m in ("ETS", "ARIMA", "THETA") else np.nan,
                                  "mb_hi80": f + mb_w80 if m in ("ETS", "ARIMA", "THETA") else np.nan,
                                  "mb_lo95": f - mb_w95 if m in ("ETS", "ARIMA", "THETA") else np.nan,
