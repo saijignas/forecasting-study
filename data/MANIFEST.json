@@ -1,0 +1,989 @@
+{
+  "generated_utc": "2026-10-15T19:30:59+00:00",
+  "generator": "scripts/download_data.py",
+  "python": "3.11.2",
+  "window_monthly": {
+    "start": "1992-01-01",
+    "end": "2025-09-01",
+    "n_obs": 405,
+    "end_rationale": "The last month before the Oct-Nov 2025 US data-collection gap, which leaves a missing October 2025 value in the CPI series. Using one common end date avoids interpolating actuals."
+  },
+  "note": "FRED values can be revised; the SHA-256 pins the exact bytes used. Raw/processed data are git-ignored.",
+  "files": [
+    {
+      "file": "data/raw/fred/RSAFSNA.csv",
+      "series_id": "RSAFSNA",
+      "title": "Advance Retail Sales: Retail Trade and Food Services (NSA)",
+      "group": "retail",
+      "adjustment": "NSA",
+      "source_agency": "U.S. Census Bureau",
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=RSAFSNA",
+      "download_date_utc": "2026-10-15",
+      "sha256": "46f64ebfd5df061e6a0a81433cbe8f96f89f4bd3626b881712602effa4eff8b6",
+      "bytes": 7531,
+      "rows": 417,
+      "rows_nonmissing": 417,
+      "frequency": "monthly",
+      "date_range_file": [
+        "1992-01-01",
+        "2026-09-01"
+      ],
+      "window": [
+        "1992-01-01",
+        "2025-09-01"
+      ],
+      "window_rows": 405,
+      "window_missing": 0,
+      "window_nonpositive": 0,
+      "window_complete_monthly": true,
+      "median_step_days": 31.0,
+      "licence_note": "Data obtained through FRED (Federal Reserve Bank of St. Louis) public CSV endpoint. FRED terms (https://fred.stlouisfed.org/legal/): free for personal, non-commercial and educational use with citation of the source agency 'via FRED'; copyrighted third-party series need the holder's permission beyond that; FRED also prohibits bulk scraping/mirroring/archiving. Underlying series are from US statistical agencies. Raw files are therefore NOT redistributed in this repository; only this script and SHA-256 hashes are."
+    },
+    {
+      "file": "data/raw/fred/RSAFS.csv",
+      "series_id": "RSAFS",
+      "title": "Advance Retail Sales: Retail Trade and Food Services (SA)",
+      "group": "retail",
+      "adjustment": "SA",
+      "source_agency": "U.S. Census Bureau",
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=RSAFS",
+      "download_date_utc": "2026-10-15",
+      "sha256": "627d8bb386ac80f4aede3a9496b63040df584875fb766d455b08ebd84311468f",
+      "bytes": 7529,
+      "rows": 417,
+      "rows_nonmissing": 417,
+      "frequency": "monthly",
+      "date_range_file": [
+        "1992-01-01",
+        "2026-09-01"
+      ],
+      "window": [
+        "1992-01-01",
+        "2025-09-01"
+      ],
+      "window_rows": 405,
+      "window_missing": 0,
+      "window_nonpositive": 0,
+      "window_complete_monthly": true,
+      "median_step_days": 31.0,
+      "licence_note": "Data obtained through FRED (Federal Reserve Bank of St. Louis) public CSV endpoint. FRED terms (https://fred.stlouisfed.org/legal/): free for personal, non-commercial and educational use with citation of the source agency 'via FRED'; copyrighted third-party series need the holder's permission beyond that; FRED also prohibits bulk scraping/mirroring/archiving. Underlying series are from US statistical agencies. Raw files are therefore NOT redistributed in this repository; only this script and SHA-256 hashes are."
+    },
+    {
+      "file": "data/raw/fred/RSMVPDN.csv",
+      "series_id": "RSMVPDN",
+      "title": "Retail Sales: Motor Vehicle and Parts Dealers (NSA)",
+      "group": "retail",
+      "adjustment": "NSA",
+      "source_agency": "U.S. Census Bureau",
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=RSMVPDN",
+      "download_date_utc": "2026-10-15",
+      "sha256": "36e4a53e44657c8379dbbdf1406e06cc2437f97cee34660feb07733f91a94563",
+      "bytes": 7212,
+      "rows": 417,
+      "rows_nonmissing": 417,
+      "frequency": "monthly",
+      "date_range_file": [
+        "1992-01-01",
+        "2026-09-01"
+      ],
+      "window": [
+        "1992-01-01",
+        "2025-09-01"
+      ],
+      "window_rows": 405,
+      "window_missing": 0,
+      "window_nonpositive": 0,
+      "window_complete_monthly": true,
+      "median_step_days": 31.0,
+      "licence_note": "Data obtained through FRED (Federal Reserve Bank of St. Louis) public CSV endpoint. FRED terms (https://fred.stlouisfed.org/legal/): free for personal, non-commercial and educational use with citation of the source agency 'via FRED'; copyrighted third-party series need the holder's permission beyond that; FRED also prohibits bulk scraping/mirroring/archiving. Underlying series are from US statistical agencies. Raw files are therefore NOT redistributed in this repository; only this script and SHA-256 hashes are."
+    },
+    {
+      "file": "data/raw/fred/RSGCSN.csv",
+      "series_id": "RSGCSN",
+      "title": "Retail Sales: Grocery Stores (NSA)",
+      "group": "retail",
+      "adjustment": "NSA",
+      "source_agency": "U.S. Census Bureau",
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=RSGCSN",
+      "download_date_utc": "2026-10-15",
+      "sha256": "cdd8dcb505be54abc72f9d39ec0944611662b64b5e7fc34f6a4ff2de83edbff8",
+      "bytes": 7113,
+      "rows": 417,
+      "rows_nonmissing": 417,
+      "frequency": "monthly",
+      "date_range_file": [
+        "1992-01-01",
+        "2026-09-01"
+      ],
+      "window": [
+        "1992-01-01",
+        "2025-09-01"
+      ],
+      "window_rows": 405,
+      "window_missing": 0,
+      "window_nonpositive": 0,
+      "window_complete_monthly": true,
+      "median_step_days": 31.0,
+      "licence_note": "Data obtained through FRED (Federal Reserve Bank of St. Louis) public CSV endpoint. FRED terms (https://fred.stlouisfed.org/legal/): free for personal, non-commercial and educational use with citation of the source agency 'via FRED'; copyrighted third-party series need the holder's permission beyond that; FRED also prohibits bulk scraping/mirroring/archiving. Underlying series are from US statistical agencies. Raw files are therefore NOT redistributed in this repository; only this script and SHA-256 hashes are."
+    },
+    {
+      "file": "data/raw/fred/RSCCASN.csv",
+      "series_id": "RSCCASN",
+      "title": "Retail Sales: Clothing and Clothing Accessories Stores (NSA)",
+      "group": "retail",
+      "adjustment": "NSA",
+      "source_agency": "U.S. Census Bureau",
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=RSCCASN",
+      "download_date_utc": "2026-10-15",
+      "sha256": "c7d10de5ebf68a489e08b44d958f66b78a3dc25dfb3eeb73cb12ce28cf33edd1",
+      "bytes": 7070,
+      "rows": 417,
+      "rows_nonmissing": 417,
+      "frequency": "monthly",
+      "date_range_file": [
+        "1992-01-01",
+        "2026-09-01"
+      ],
+      "window": [
+        "1992-01-01",
+        "2025-09-01"
+      ],
+      "window_rows": 405,
+      "window_missing": 0,
+      "window_nonpositive": 0,
+      "window_complete_monthly": true,
+      "median_step_days": 31.0,
+      "licence_note": "Data obtained through FRED (Federal Reserve Bank of St. Louis) public CSV endpoint. FRED terms (https://fred.stlouisfed.org/legal/): free for personal, non-commercial and educational use with citation of the source agency 'via FRED'; copyrighted third-party series need the holder's permission beyond that; FRED also prohibits bulk scraping/mirroring/archiving. Underlying series are from US statistical agencies. Raw files are therefore NOT redistributed in this repository; only this script and SHA-256 hashes are."
+    },
+    {
+      "file": "data/raw/fred/RSNSRN.csv",
+      "series_id": "RSNSRN",
+      "title": "Retail Sales: Nonstore Retailers (NSA)",
+      "group": "retail",
+      "adjustment": "NSA",
+      "source_agency": "U.S. Census Bureau",
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=RSNSRN",
+      "download_date_utc": "2026-10-15",
+      "sha256": "04a7b7cf34336bb96d77983d9878a937a54bc014d8da169ee62f7bf825bbf823",
+      "bytes": 7078,
+      "rows": 417,
+      "rows_nonmissing": 417,
+      "frequency": "monthly",
+      "date_range_file": [
+        "1992-01-01",
+        "2026-09-01"
+      ],
+      "window": [
+        "1992-01-01",
+        "2025-09-01"
+      ],
+      "window_rows": 405,
+      "window_missing": 0,
+      "window_nonpositive": 0,
+      "window_complete_monthly": true,
+      "median_step_days": 31.0,
+      "licence_note": "Data obtained through FRED (Federal Reserve Bank of St. Louis) public CSV endpoint. FRED terms (https://fred.stlouisfed.org/legal/): free for personal, non-commercial and educational use with citation of the source agency 'via FRED'; copyrighted third-party series need the holder's permission beyond that; FRED also prohibits bulk scraping/mirroring/archiving. Underlying series are from US statistical agencies. Raw files are therefore NOT redistributed in this repository; only this script and SHA-256 hashes are."
+    },
+    {
+      "file": "data/raw/fred/RSBMGESDN.csv",
+      "series_id": "RSBMGESDN",
+      "title": "Retail Sales: Building Materials and Garden Equipment and Supplies Dealers (NSA)",
+      "group": "retail",
+      "adjustment": "NSA",
+      "source_agency": "U.S. Census Bureau",
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=RSBMGESDN",
+      "download_date_utc": "2026-10-15",
+      "sha256": "b28047e2c3bff258278ace2a7dd88f6b4dc8a815890e25d8c3013d62d0324ebf",
+      "bytes": 7110,
+      "rows": 417,
+      "rows_nonmissing": 417,
+      "frequency": "monthly",
+      "date_range_file": [
+        "1992-01-01",
+        "2026-09-01"
+      ],
+      "window": [
+        "1992-01-01",
+        "2025-09-01"
+      ],
+      "window_rows": 405,
+      "window_missing": 0,
+      "window_nonpositive": 0,
+      "window_complete_monthly": true,
+      "median_step_days": 31.0,
+      "licence_note": "Data obtained through FRED (Federal Reserve Bank of St. Louis) public CSV endpoint. FRED terms (https://fred.stlouisfed.org/legal/): free for personal, non-commercial and educational use with citation of the source agency 'via FRED'; copyrighted third-party series need the holder's permission beyond that; FRED also prohibits bulk scraping/mirroring/archiving. Underlying series are from US statistical agencies. Raw files are therefore NOT redistributed in this repository; only this script and SHA-256 hashes are."
+    },
+    {
+      "file": "data/raw/fred/RSFSDPN.csv",
+      "series_id": "RSFSDPN",
+      "title": "Retail Sales: Food Services and Drinking Places (NSA)",
+      "group": "retail",
+      "adjustment": "NSA",
+      "source_agency": "U.S. Census Bureau",
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=RSFSDPN",
+      "download_date_utc": "2026-10-15",
+      "sha256": "444ade953cd2b69abc21a8c677e20a371da6380be6c40254315e67f939ee1518",
+      "bytes": 7114,
+      "rows": 417,
+      "rows_nonmissing": 417,
+      "frequency": "monthly",
+      "date_range_file": [
+        "1992-01-01",
+        "2026-09-01"
+      ],
+      "window": [
+        "1992-01-01",
+        "2025-09-01"
+      ],
+      "window_rows": 405,
+      "window_missing": 0,
+      "window_nonpositive": 0,
+      "window_complete_monthly": true,
+      "median_step_days": 31.0,
+      "licence_note": "Data obtained through FRED (Federal Reserve Bank of St. Louis) public CSV endpoint. FRED terms (https://fred.stlouisfed.org/legal/): free for personal, non-commercial and educational use with citation of the source agency 'via FRED'; copyrighted third-party series need the holder's permission beyond that; FRED also prohibits bulk scraping/mirroring/archiving. Underlying series are from US statistical agencies. Raw files are therefore NOT redistributed in this repository; only this script and SHA-256 hashes are."
+    },
+    {
+      "file": "data/raw/fred/RSGASSN.csv",
+      "series_id": "RSGASSN",
+      "title": "Retail Sales: Gasoline Stations (NSA)",
+      "group": "retail",
+      "adjustment": "NSA",
+      "source_agency": "U.S. Census Bureau",
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=RSGASSN",
+      "download_date_utc": "2026-10-15",
+      "sha256": "a572987243224cbdda50a84e2c54936df434cb82a3f604bc179a36200cdede3a",
+      "bytes": 7114,
+      "rows": 417,
+      "rows_nonmissing": 417,
+      "frequency": "monthly",
+      "date_range_file": [
+        "1992-01-01",
+        "2026-09-01"
+      ],
+      "window": [
+        "1992-01-01",
+        "2025-09-01"
+      ],
+      "window_rows": 405,
+      "window_missing": 0,
+      "window_nonpositive": 0,
+      "window_complete_monthly": true,
+      "median_step_days": 31.0,
+      "licence_note": "Data obtained through FRED (Federal Reserve Bank of St. Louis) public CSV endpoint. FRED terms (https://fred.stlouisfed.org/legal/): free for personal, non-commercial and educational use with citation of the source agency 'via FRED'; copyrighted third-party series need the holder's permission beyond that; FRED also prohibits bulk scraping/mirroring/archiving. Underlying series are from US statistical agencies. Raw files are therefore NOT redistributed in this repository; only this script and SHA-256 hashes are."
+    },
+    {
+      "file": "data/raw/fred/RSFHFSN.csv",
+      "series_id": "RSFHFSN",
+      "title": "Retail Sales: Furniture and Home Furnishings Stores (NSA)",
+      "group": "retail",
+      "adjustment": "NSA",
+      "source_agency": "U.S. Census Bureau",
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=RSFHFSN",
+      "download_date_utc": "2026-10-15",
+      "sha256": "b4d4908dbebf152758788c6b1612d1d36b91962ace8d99a4b47182cb9ca4e0c8",
+      "bytes": 6778,
+      "rows": 417,
+      "rows_nonmissing": 417,
+      "frequency": "monthly",
+      "date_range_file": [
+        "1992-01-01",
+        "2026-09-01"
+      ],
+      "window": [
+        "1992-01-01",
+        "2025-09-01"
+      ],
+      "window_rows": 405,
+      "window_missing": 0,
+      "window_nonpositive": 0,
+      "window_complete_monthly": true,
+      "median_step_days": 31.0,
+      "licence_note": "Data obtained through FRED (Federal Reserve Bank of St. Louis) public CSV endpoint. FRED terms (https://fred.stlouisfed.org/legal/): free for personal, non-commercial and educational use with citation of the source agency 'via FRED'; copyrighted third-party series need the holder's permission beyond that; FRED also prohibits bulk scraping/mirroring/archiving. Underlying series are from US statistical agencies. Raw files are therefore NOT redistributed in this repository; only this script and SHA-256 hashes are."
+    },
+    {
+      "file": "data/raw/fred/INDPRO.csv",
+      "series_id": "INDPRO",
+      "title": "Industrial Production: Total Index (SA)",
+      "group": "industrial",
+      "adjustment": "SA",
+      "source_agency": "Board of Governors of the Federal Reserve System",
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=INDPRO",
+      "download_date_utc": "2026-10-15",
+      "sha256": "1a916926060d09b970880153da76d36040505666dbe686ae2abda1ff7eba6279",
+      "bytes": 24440,
+      "rows": 1292,
+      "rows_nonmissing": 1292,
+      "frequency": "monthly",
+      "date_range_file": [
+        "1919-01-01",
+        "2026-08-01"
+      ],
+      "window": [
+        "1992-01-01",
+        "2025-09-01"
+      ],
+      "window_rows": 405,
+      "window_missing": 0,
+      "window_nonpositive": 0,
+      "window_complete_monthly": true,
+      "median_step_days": 31.0,
+      "licence_note": "Data obtained through FRED (Federal Reserve Bank of St. Louis) public CSV endpoint. FRED terms (https://fred.stlouisfed.org/legal/): free for personal, non-commercial and educational use with citation of the source agency 'via FRED'; copyrighted third-party series need the holder's permission beyond that; FRED also prohibits bulk scraping/mirroring/archiving. Underlying series are from US statistical agencies. Raw files are therefore NOT redistributed in this repository; only this script and SHA-256 hashes are."
+    },
+    {
+      "file": "data/raw/fred/IPMAN.csv",
+      "series_id": "IPMAN",
+      "title": "Industrial Production: Manufacturing (SA)",
+      "group": "industrial",
+      "adjustment": "SA",
+      "source_agency": "Board of Governors of the Federal Reserve System",
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=IPMAN",
+      "download_date_utc": "2026-10-15",
+      "sha256": "3cb59d418439df3271a0b580480e51aa1837802cba81900f3f9b9ab316c25391",
+      "bytes": 12561,
+      "rows": 656,
+      "rows_nonmissing": 656,
+      "frequency": "monthly",
+      "date_range_file": [
+        "1972-01-01",
+        "2026-08-01"
+      ],
+      "window": [
+        "1992-01-01",
+        "2025-09-01"
+      ],
+      "window_rows": 405,
+      "window_missing": 0,
+      "window_nonpositive": 0,
+      "window_complete_monthly": true,
+      "median_step_days": 31.0,
+      "licence_note": "Data obtained through FRED (Federal Reserve Bank of St. Louis) public CSV endpoint. FRED terms (https://fred.stlouisfed.org/legal/): free for personal, non-commercial and educational use with citation of the source agency 'via FRED'; copyrighted third-party series need the holder's permission beyond that; FRED also prohibits bulk scraping/mirroring/archiving. Underlying series are from US statistical agencies. Raw files are therefore NOT redistributed in this repository; only this script and SHA-256 hashes are."
+    },
+    {
+      "file": "data/raw/fred/IPB50001N.csv",
+      "series_id": "IPB50001N",
+      "title": "Industrial Production: Total Index (NSA)",
+      "group": "industrial",
+      "adjustment": "NSA",
+      "source_agency": "Board of Governors of the Federal Reserve System",
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=IPB50001N",
+      "download_date_utc": "2026-10-15",
+      "sha256": "2c9d987a0f6b14cc2e623e5f0d82c9b7d8b3a9c55bff76d1df6ca9a70888d8a1",
+      "bytes": 24435,
+      "rows": 1292,
+      "rows_nonmissing": 1292,
+      "frequency": "monthly",
+      "date_range_file": [
+        "1919-01-01",
+        "2026-08-01"
+      ],
+      "window": [
+        "1992-01-01",
+        "2025-09-01"
+      ],
+      "window_rows": 405,
+      "window_missing": 0,
+      "window_nonpositive": 0,
+      "window_complete_monthly": true,
+      "median_step_days": 31.0,
+      "licence_note": "Data obtained through FRED (Federal Reserve Bank of St. Louis) public CSV endpoint. FRED terms (https://fred.stlouisfed.org/legal/): free for personal, non-commercial and educational use with citation of the source agency 'via FRED'; copyrighted third-party series need the holder's permission beyond that; FRED also prohibits bulk scraping/mirroring/archiving. Underlying series are from US statistical agencies. Raw files are therefore NOT redistributed in this repository; only this script and SHA-256 hashes are."
+    },
+    {
+      "file": "data/raw/fred/IPG2211N.csv",
+      "series_id": "IPG2211N",
+      "title": "Industrial Production: Electric Power Generation, Transmission and Distribution (NSA)",
+      "group": "industrial",
+      "adjustment": "NSA",
+      "source_agency": "Board of Governors of the Federal Reserve System",
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=IPG2211N",
+      "download_date_utc": "2026-10-15",
+      "sha256": "8ecceb563c238c0fce2b31c6c1173e0adf836559f5e9afa37f838d96cb995497",
+      "bytes": 12636,
+      "rows": 656,
+      "rows_nonmissing": 656,
+      "frequency": "monthly",
+      "date_range_file": [
+        "1972-01-01",
+        "2026-08-01"
+      ],
+      "window": [
+        "1992-01-01",
+        "2025-09-01"
+      ],
+      "window_rows": 405,
+      "window_missing": 0,
+      "window_nonpositive": 0,
+      "window_complete_monthly": true,
+      "median_step_days": 31.0,
+      "licence_note": "Data obtained through FRED (Federal Reserve Bank of St. Louis) public CSV endpoint. FRED terms (https://fred.stlouisfed.org/legal/): free for personal, non-commercial and educational use with citation of the source agency 'via FRED'; copyrighted third-party series need the holder's permission beyond that; FRED also prohibits bulk scraping/mirroring/archiving. Underlying series are from US statistical agencies. Raw files are therefore NOT redistributed in this repository; only this script and SHA-256 hashes are."
+    },
+    {
+      "file": "data/raw/fred/IPG3361T3N.csv",
+      "series_id": "IPG3361T3N",
+      "title": "Industrial Production: Motor Vehicles and Parts (NSA)",
+      "group": "industrial",
+      "adjustment": "NSA",
+      "source_agency": "Board of Governors of the Federal Reserve System",
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=IPG3361T3N",
+      "download_date_utc": "2026-10-15",
+      "sha256": "d15c1dc0d707e8c50d1430e8725f4cee84389957fce72910ea470e6ef9355672",
+      "bytes": 12592,
+      "rows": 656,
+      "rows_nonmissing": 656,
+      "frequency": "monthly",
+      "date_range_file": [
+        "1972-01-01",
+        "2026-08-01"
+      ],
+      "window": [
+        "1992-01-01",
+        "2025-09-01"
+      ],
+      "window_rows": 405,
+      "window_missing": 0,
+      "window_nonpositive": 0,
+      "window_complete_monthly": true,
+      "median_step_days": 31.0,
+      "licence_note": "Data obtained through FRED (Federal Reserve Bank of St. Louis) public CSV endpoint. FRED terms (https://fred.stlouisfed.org/legal/): free for personal, non-commercial and educational use with citation of the source agency 'via FRED'; copyrighted third-party series need the holder's permission beyond that; FRED also prohibits bulk scraping/mirroring/archiving. Underlying series are from US statistical agencies. Raw files are therefore NOT redistributed in this repository; only this script and SHA-256 hashes are."
+    },
+    {
+      "file": "data/raw/fred/CPIAUCNS.csv",
+      "series_id": "CPIAUCNS",
+      "title": "Consumer Price Index for All Urban Consumers: All Items (NSA)",
+      "group": "cpi",
+      "adjustment": "NSA",
+      "source_agency": "U.S. Bureau of Labor Statistics",
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=CPIAUCNS",
+      "download_date_utc": "2026-10-15",
+      "sha256": "cfab9b9be4a5d4f06253c4dcc3f7e0b28b1d58837e710dd7cb1fd54a49e7ad7c",
+      "bytes": 25093,
+      "rows": 1365,
+      "rows_nonmissing": 1364,
+      "frequency": "monthly",
+      "date_range_file": [
+        "1913-01-01",
+        "2026-09-01"
+      ],
+      "window": [
+        "1992-01-01",
+        "2025-09-01"
+      ],
+      "window_rows": 405,
+      "window_missing": 0,
+      "window_nonpositive": 0,
+      "window_complete_monthly": true,
+      "median_step_days": 31.0,
+      "licence_note": "Data obtained through FRED (Federal Reserve Bank of St. Louis) public CSV endpoint. FRED terms (https://fred.stlouisfed.org/legal/): free for personal, non-commercial and educational use with citation of the source agency 'via FRED'; copyrighted third-party series need the holder's permission beyond that; FRED also prohibits bulk scraping/mirroring/archiving. Underlying series are from US statistical agencies. Raw files are therefore NOT redistributed in this repository; only this script and SHA-256 hashes are."
+    },
+    {
+      "file": "data/raw/fred/CPILFESL.csv",
+      "series_id": "CPILFESL",
+      "title": "CPI for All Urban Consumers: All Items Less Food and Energy (SA)",
+      "group": "cpi",
+      "adjustment": "SA",
+      "source_agency": "U.S. Bureau of Labor Statistics",
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=CPILFESL",
+      "download_date_utc": "2026-10-15",
+      "sha256": "182058ceeb094cb2af1dfe7474553c50d779e3907c9472302d30c0d64ea147d0",
+      "bytes": 15603,
+      "rows": 837,
+      "rows_nonmissing": 836,
+      "frequency": "monthly",
+      "date_range_file": [
+        "1957-01-01",
+        "2026-09-01"
+      ],
+      "window": [
+        "1992-01-01",
+        "2025-09-01"
+      ],
+      "window_rows": 405,
+      "window_missing": 0,
+      "window_nonpositive": 0,
+      "window_complete_monthly": true,
+      "median_step_days": 31.0,
+      "licence_note": "Data obtained through FRED (Federal Reserve Bank of St. Louis) public CSV endpoint. FRED terms (https://fred.stlouisfed.org/legal/): free for personal, non-commercial and educational use with citation of the source agency 'via FRED'; copyrighted third-party series need the holder's permission beyond that; FRED also prohibits bulk scraping/mirroring/archiving. Underlying series are from US statistical agencies. Raw files are therefore NOT redistributed in this repository; only this script and SHA-256 hashes are."
+    },
+    {
+      "file": "data/raw/fred/CUUR0000SAF11.csv",
+      "series_id": "CUUR0000SAF11",
+      "title": "CPI-U: Food at Home (NSA)",
+      "group": "cpi",
+      "adjustment": "NSA",
+      "source_agency": "U.S. Bureau of Labor Statistics",
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=CUUR0000SAF11",
+      "download_date_utc": "2026-10-15",
+      "sha256": "792f9cc1450fd562ff3296a3f69a2de1e3ff33744ee1b88c7ff5217ee410f29a",
+      "bytes": 17763,
+      "rows": 957,
+      "rows_nonmissing": 956,
+      "frequency": "monthly",
+      "date_range_file": [
+        "1947-01-01",
+        "2026-09-01"
+      ],
+      "window": [
+        "1992-01-01",
+        "2025-09-01"
+      ],
+      "window_rows": 405,
+      "window_missing": 0,
+      "window_nonpositive": 0,
+      "window_complete_monthly": true,
+      "median_step_days": 31.0,
+      "licence_note": "Data obtained through FRED (Federal Reserve Bank of St. Louis) public CSV endpoint. FRED terms (https://fred.stlouisfed.org/legal/): free for personal, non-commercial and educational use with citation of the source agency 'via FRED'; copyrighted third-party series need the holder's permission beyond that; FRED also prohibits bulk scraping/mirroring/archiving. Underlying series are from US statistical agencies. Raw files are therefore NOT redistributed in this repository; only this script and SHA-256 hashes are."
+    },
+    {
+      "file": "data/raw/fred/CUUR0000SEHA.csv",
+      "series_id": "CUUR0000SEHA",
+      "title": "CPI-U: Rent of Primary Residence (NSA)",
+      "group": "cpi",
+      "adjustment": "NSA",
+      "source_agency": "U.S. Bureau of Labor Statistics",
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=CUUR0000SEHA",
+      "download_date_utc": "2026-10-15",
+      "sha256": "a0d7d1f3d58f9dd8d7e4b498dd7e4a5972c760087c0f3ea79e7394fe9c5c6108",
+      "bytes": 23132,
+      "rows": 1342,
+      "rows_nonmissing": 1080,
+      "frequency": "monthly",
+      "date_range_file": [
+        "1914-12-01",
+        "2026-09-01"
+      ],
+      "window": [
+        "1992-01-01",
+        "2025-09-01"
+      ],
+      "window_rows": 405,
+      "window_missing": 0,
+      "window_nonpositive": 0,
+      "window_complete_monthly": true,
+      "median_step_days": 31.0,
+      "licence_note": "Data obtained through FRED (Federal Reserve Bank of St. Louis) public CSV endpoint. FRED terms (https://fred.stlouisfed.org/legal/): free for personal, non-commercial and educational use with citation of the source agency 'via FRED'; copyrighted third-party series need the holder's permission beyond that; FRED also prohibits bulk scraping/mirroring/archiving. Underlying series are from US statistical agencies. Raw files are therefore NOT redistributed in this repository; only this script and SHA-256 hashes are."
+    },
+    {
+      "file": "data/raw/fred/CUUR0000SETB01.csv",
+      "series_id": "CUUR0000SETB01",
+      "title": "CPI-U: Gasoline, All Types (NSA)",
+      "group": "cpi",
+      "adjustment": "NSA",
+      "source_agency": "U.S. Bureau of Labor Statistics",
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=CUUR0000SETB01",
+      "download_date_utc": "2026-10-15",
+      "sha256": "28b24b1de70de6a504c34f8f730a75c24fee768144dd59693baa12f44a42332b",
+      "bytes": 19325,
+      "rows": 1099,
+      "rows_nonmissing": 950,
+      "frequency": "monthly",
+      "date_range_file": [
+        "1935-03-01",
+        "2026-09-01"
+      ],
+      "window": [
+        "1992-01-01",
+        "2025-09-01"
+      ],
+      "window_rows": 405,
+      "window_missing": 0,
+      "window_nonpositive": 0,
+      "window_complete_monthly": true,
+      "median_step_days": 31.0,
+      "licence_note": "Data obtained through FRED (Federal Reserve Bank of St. Louis) public CSV endpoint. FRED terms (https://fred.stlouisfed.org/legal/): free for personal, non-commercial and educational use with citation of the source agency 'via FRED'; copyrighted third-party series need the holder's permission beyond that; FRED also prohibits bulk scraping/mirroring/archiving. Underlying series are from US statistical agencies. Raw files are therefore NOT redistributed in this repository; only this script and SHA-256 hashes are."
+    },
+    {
+      "file": "data/raw/fred/CUUR0000SEHF01.csv",
+      "series_id": "CUUR0000SEHF01",
+      "title": "CPI-U: Electricity (NSA)",
+      "group": "cpi",
+      "adjustment": "NSA",
+      "source_agency": "U.S. Bureau of Labor Statistics",
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=CUUR0000SEHF01",
+      "download_date_utc": "2026-10-15",
+      "sha256": "fb576a571e2b18a8594fc77b24f969b58d960d82b5acf9761482e404309b36c1",
+      "bytes": 23168,
+      "rows": 1354,
+      "rows_nonmissing": 1062,
+      "frequency": "monthly",
+      "date_range_file": [
+        "1913-12-01",
+        "2026-09-01"
+      ],
+      "window": [
+        "1992-01-01",
+        "2025-09-01"
+      ],
+      "window_rows": 405,
+      "window_missing": 0,
+      "window_nonpositive": 0,
+      "window_complete_monthly": true,
+      "median_step_days": 31.0,
+      "licence_note": "Data obtained through FRED (Federal Reserve Bank of St. Louis) public CSV endpoint. FRED terms (https://fred.stlouisfed.org/legal/): free for personal, non-commercial and educational use with citation of the source agency 'via FRED'; copyrighted third-party series need the holder's permission beyond that; FRED also prohibits bulk scraping/mirroring/archiving. Underlying series are from US statistical agencies. Raw files are therefore NOT redistributed in this repository; only this script and SHA-256 hashes are."
+    },
+    {
+      "file": "data/raw/fred/HOUST.csv",
+      "series_id": "HOUST",
+      "title": "New Privately-Owned Housing Units Started: Total Units (SA)",
+      "group": "housing",
+      "adjustment": "SA",
+      "source_agency": "U.S. Census Bureau and U.S. Department of Housing and Urban Development",
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=HOUST",
+      "download_date_utc": "2026-10-15",
+      "sha256": "d531fdc59678e34d58c9b885d77714e8da6e442b4da21935341a54eda575fc4d",
+      "bytes": 12921,
+      "rows": 812,
+      "rows_nonmissing": 812,
+      "frequency": "monthly",
+      "date_range_file": [
+        "1959-01-01",
+        "2026-08-01"
+      ],
+      "window": [
+        "1992-01-01",
+        "2025-09-01"
+      ],
+      "window_rows": 405,
+      "window_missing": 0,
+      "window_nonpositive": 0,
+      "window_complete_monthly": true,
+      "median_step_days": 31.0,
+      "licence_note": "Data obtained through FRED (Federal Reserve Bank of St. Louis) public CSV endpoint. FRED terms (https://fred.stlouisfed.org/legal/): free for personal, non-commercial and educational use with citation of the source agency 'via FRED'; copyrighted third-party series need the holder's permission beyond that; FRED also prohibits bulk scraping/mirroring/archiving. Underlying series are from US statistical agencies. Raw files are therefore NOT redistributed in this repository; only this script and SHA-256 hashes are."
+    },
+    {
+      "file": "data/raw/fred/HOUSTNSA.csv",
+      "series_id": "HOUSTNSA",
+      "title": "New Privately-Owned Housing Units Started: Total Units (NSA)",
+      "group": "housing",
+      "adjustment": "NSA",
+      "source_agency": "U.S. Census Bureau and U.S. Department of Housing and Urban Development",
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=HOUSTNSA",
+      "download_date_utc": "2026-10-15",
+      "sha256": "ed137b8a270d06a7298096d4a43f013d60af3860a0e13e0fdb652a134541b915",
+      "bytes": 13581,
+      "rows": 812,
+      "rows_nonmissing": 812,
+      "frequency": "monthly",
+      "date_range_file": [
+        "1959-01-01",
+        "2026-08-01"
+      ],
+      "window": [
+        "1992-01-01",
+        "2025-09-01"
+      ],
+      "window_rows": 405,
+      "window_missing": 0,
+      "window_nonpositive": 0,
+      "window_complete_monthly": true,
+      "median_step_days": 31.0,
+      "licence_note": "Data obtained through FRED (Federal Reserve Bank of St. Louis) public CSV endpoint. FRED terms (https://fred.stlouisfed.org/legal/): free for personal, non-commercial and educational use with citation of the source agency 'via FRED'; copyrighted third-party series need the holder's permission beyond that; FRED also prohibits bulk scraping/mirroring/archiving. Underlying series are from US statistical agencies. Raw files are therefore NOT redistributed in this repository; only this script and SHA-256 hashes are."
+    },
+    {
+      "file": "data/raw/fred/PERMIT.csv",
+      "series_id": "PERMIT",
+      "title": "New Privately-Owned Housing Units Authorized in Permit-Issuing Places: Total Units (SA)",
+      "group": "housing",
+      "adjustment": "SA",
+      "source_agency": "U.S. Census Bureau and U.S. Department of Housing and Urban Development",
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PERMIT",
+      "download_date_utc": "2026-10-15",
+      "sha256": "3df8937aeb91da0d2e24101405bb266f41a1c40f2d8efb3cbd8124b504079331",
+      "bytes": 12697,
+      "rows": 800,
+      "rows_nonmissing": 800,
+      "frequency": "monthly",
+      "date_range_file": [
+        "1960-01-01",
+        "2026-08-01"
+      ],
+      "window": [
+        "1992-01-01",
+        "2025-09-01"
+      ],
+      "window_rows": 405,
+      "window_missing": 0,
+      "window_nonpositive": 0,
+      "window_complete_monthly": true,
+      "median_step_days": 31.0,
+      "licence_note": "Data obtained through FRED (Federal Reserve Bank of St. Louis) public CSV endpoint. FRED terms (https://fred.stlouisfed.org/legal/): free for personal, non-commercial and educational use with citation of the source agency 'via FRED'; copyrighted third-party series need the holder's permission beyond that; FRED also prohibits bulk scraping/mirroring/archiving. Underlying series are from US statistical agencies. Raw files are therefore NOT redistributed in this repository; only this script and SHA-256 hashes are."
+    },
+    {
+      "file": "data/raw/fred/TOTALSA.csv",
+      "series_id": "TOTALSA",
+      "title": "Total Vehicle Sales (SA, millions of units, annual rate)",
+      "group": "auto",
+      "adjustment": "SA",
+      "source_agency": "U.S. Bureau of Economic Analysis",
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=TOTALSA",
+      "download_date_utc": "2026-10-15",
+      "sha256": "fd3e29b8163fa4d93650d87e11311762b1045e8c9bc056c2dead6e8c43d92e5a",
+      "bytes": 10973,
+      "rows": 609,
+      "rows_nonmissing": 609,
+      "frequency": "monthly",
+      "date_range_file": [
+        "1976-01-01",
+        "2026-09-01"
+      ],
+      "window": [
+        "1992-01-01",
+        "2025-09-01"
+      ],
+      "window_rows": 405,
+      "window_missing": 0,
+      "window_nonpositive": 0,
+      "window_complete_monthly": true,
+      "median_step_days": 31.0,
+      "licence_note": "Data obtained through FRED (Federal Reserve Bank of St. Louis) public CSV endpoint. FRED terms (https://fred.stlouisfed.org/legal/): free for personal, non-commercial and educational use with citation of the source agency 'via FRED'; copyrighted third-party series need the holder's permission beyond that; FRED also prohibits bulk scraping/mirroring/archiving. Underlying series are from US statistical agencies. Raw files are therefore NOT redistributed in this repository; only this script and SHA-256 hashes are."
+    },
+    {
+      "file": "data/raw/fred/TOTALNSA.csv",
+      "series_id": "TOTALNSA",
+      "title": "Total Vehicle Sales (NSA, thousands of units)",
+      "group": "auto",
+      "adjustment": "NSA",
+      "source_agency": "U.S. Bureau of Economic Analysis",
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=TOTALNSA",
+      "download_date_utc": "2026-10-15",
+      "sha256": "53f80ed5470048930dcece95f37e8db9d3104b4b24c078642297877f56b09934",
+      "bytes": 12137,
+      "rows": 609,
+      "rows_nonmissing": 609,
+      "frequency": "monthly",
+      "date_range_file": [
+        "1976-01-01",
+        "2026-09-01"
+      ],
+      "window": [
+        "1992-01-01",
+        "2025-09-01"
+      ],
+      "window_rows": 405,
+      "window_missing": 0,
+      "window_nonpositive": 0,
+      "window_complete_monthly": true,
+      "median_step_days": 31.0,
+      "licence_note": "Data obtained through FRED (Federal Reserve Bank of St. Louis) public CSV endpoint. FRED terms (https://fred.stlouisfed.org/legal/): free for personal, non-commercial and educational use with citation of the source agency 'via FRED'; copyrighted third-party series need the holder's permission beyond that; FRED also prohibits bulk scraping/mirroring/archiving. Underlying series are from US statistical agencies. Raw files are therefore NOT redistributed in this repository; only this script and SHA-256 hashes are."
+    },
+    {
+      "file": "data/raw/fred/PAYNSA.csv",
+      "series_id": "PAYNSA",
+      "title": "All Employees, Total Nonfarm (NSA)",
+      "group": "labor_activity",
+      "adjustment": "NSA",
+      "source_agency": "U.S. Bureau of Labor Statistics",
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PAYNSA",
+      "download_date_utc": "2026-10-15",
+      "sha256": "26f71bca5a7f7942673150077804f81561cdcee01f6935349de9d821a4746d20",
+      "bytes": 18404,
+      "rows": 1053,
+      "rows_nonmissing": 1053,
+      "frequency": "monthly",
+      "date_range_file": [
+        "1939-01-01",
+        "2026-09-01"
+      ],
+      "window": [
+        "1992-01-01",
+        "2025-09-01"
+      ],
+      "window_rows": 405,
+      "window_missing": 0,
+      "window_nonpositive": 0,
+      "window_complete_monthly": true,
+      "median_step_days": 31.0,
+      "licence_note": "Data obtained through FRED (Federal Reserve Bank of St. Louis) public CSV endpoint. FRED terms (https://fred.stlouisfed.org/legal/): free for personal, non-commercial and educational use with citation of the source agency 'via FRED'; copyrighted third-party series need the holder's permission beyond that; FRED also prohibits bulk scraping/mirroring/archiving. Underlying series are from US statistical agencies. Raw files are therefore NOT redistributed in this repository; only this script and SHA-256 hashes are."
+    },
+    {
+      "file": "data/raw/fred/UNRATENSA.csv",
+      "series_id": "UNRATENSA",
+      "title": "Unemployment Rate (NSA)",
+      "group": "labor_activity",
+      "adjustment": "NSA",
+      "source_agency": "U.S. Bureau of Labor Statistics",
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=UNRATENSA",
+      "download_date_utc": "2026-10-15",
+      "sha256": "6ecce891c5de50313f1446b8033037aa4d62bb6d73f890c9c6d01e5589bbe0d5",
+      "bytes": 14213,
+      "rows": 945,
+      "rows_nonmissing": 944,
+      "frequency": "monthly",
+      "date_range_file": [
+        "1948-01-01",
+        "2026-09-01"
+      ],
+      "window": [
+        "1992-01-01",
+        "2025-09-01"
+      ],
+      "window_rows": 405,
+      "window_missing": 0,
+      "window_nonpositive": 0,
+      "window_complete_monthly": true,
+      "median_step_days": 31.0,
+      "licence_note": "Data obtained through FRED (Federal Reserve Bank of St. Louis) public CSV endpoint. FRED terms (https://fred.stlouisfed.org/legal/): free for personal, non-commercial and educational use with citation of the source agency 'via FRED'; copyrighted third-party series need the holder's permission beyond that; FRED also prohibits bulk scraping/mirroring/archiving. Underlying series are from US statistical agencies. Raw files are therefore NOT redistributed in this repository; only this script and SHA-256 hashes are."
+    },
+    {
+      "file": "data/raw/fred/TRFVOLUSM227NFWA.csv",
+      "series_id": "TRFVOLUSM227NFWA",
+      "title": "Vehicle Miles Traveled (NSA)",
+      "group": "labor_activity",
+      "adjustment": "NSA",
+      "source_agency": "U.S. Federal Highway Administration",
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=TRFVOLUSM227NFWA",
+      "download_date_utc": "2026-10-15",
+      "sha256": "19dd41e21540014b76f2bb5be1614f8e7fe6cf53f63cf78617b494c84a462a5a",
+      "bytes": 12249,
+      "rows": 680,
+      "rows_nonmissing": 680,
+      "frequency": "monthly",
+      "date_range_file": [
+        "1970-01-01",
+        "2026-08-01"
+      ],
+      "window": [
+        "1992-01-01",
+        "2025-09-01"
+      ],
+      "window_rows": 405,
+      "window_missing": 0,
+      "window_nonpositive": 0,
+      "window_complete_monthly": true,
+      "median_step_days": 31.0,
+      "licence_note": "Data obtained through FRED (Federal Reserve Bank of St. Louis) public CSV endpoint. FRED terms (https://fred.stlouisfed.org/legal/): free for personal, non-commercial and educational use with citation of the source agency 'via FRED'; copyrighted third-party series need the holder's permission beyond that; FRED also prohibits bulk scraping/mirroring/archiving. Underlying series are from US statistical agencies. Raw files are therefore NOT redistributed in this repository; only this script and SHA-256 hashes are."
+    },
+    {
+      "file": "data/raw/fred/M2SL.csv",
+      "series_id": "M2SL",
+      "title": "M2 Money Stock (SA)",
+      "group": "money",
+      "adjustment": "SA",
+      "source_agency": "Board of Governors of the Federal Reserve System",
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=M2SL",
+      "download_date_utc": "2026-10-15",
+      "sha256": "63b673baffae16f7683963ddde0664012a7ac93ab775a82d3c98a0311e103e5a",
+      "bytes": 14607,
+      "rows": 812,
+      "rows_nonmissing": 812,
+      "frequency": "monthly",
+      "date_range_file": [
+        "1959-01-01",
+        "2026-08-01"
+      ],
+      "window": [
+        "1992-01-01",
+        "2025-09-01"
+      ],
+      "window_rows": 405,
+      "window_missing": 0,
+      "window_nonpositive": 0,
+      "window_complete_monthly": true,
+      "median_step_days": 31.0,
+      "licence_note": "Data obtained through FRED (Federal Reserve Bank of St. Louis) public CSV endpoint. FRED terms (https://fred.stlouisfed.org/legal/): free for personal, non-commercial and educational use with citation of the source agency 'via FRED'; copyrighted third-party series need the holder's permission beyond that; FRED also prohibits bulk scraping/mirroring/archiving. Underlying series are from US statistical agencies. Raw files are therefore NOT redistributed in this repository; only this script and SHA-256 hashes are."
+    },
+    {
+      "file": "data/raw/electricity/electricity_hourly_dataset.zip",
+      "description": "Monash/Zenodo archive of 321 hourly electricity-load series (UCI ElectricityLoadDiagrams, 2012-2014)",
+      "download_url": "https://zenodo.org/api/records/4656140/files/electricity_hourly_dataset.zip/content",
+      "sha256": "eff447075dde68dca0105ab7e2851c5637967ae3bb21556fd8b931f196d5968c",
+      "md5_verified_against_zenodo": true,
+      "bytes": 11823931,
+      "rows": 26304,
+      "n_series": 321,
+      "frequency": "hourly",
+      "date_range": [
+        "2012-01-01",
+        "2014-12-31"
+      ],
+      "missing_values": 0,
+      "n_series_zero_hours_gt3": 88,
+      "n_eligible_series": 233,
+      "source_url": "https://zenodo.org/records/4656140",
+      "download_date_utc": "2026-10-15",
+      "licence_note": "CC BY 4.0 (Zenodo record metadata; underlying UCI ElectricityLoadDiagrams20112014, Trindade 2015, also CC BY 4.0). Attribution required: Godahewa, R., Bergmeir, C., Webb, G., Hyndman, R. J., Montero-Manso, P. (2021). Electricity Hourly Dataset (Monash Time Series Forecasting Repository), Zenodo, doi:10.5281/zenodo.4656140; derived from Trindade, A. (2015). ElectricityLoadDiagrams20112014, UCI ML Repository, doi:10.24432/C58C86"
+    },
+    {
+      "file": "data/processed/electricity_daily_30.csv",
+      "description": "Derived: daily sums of 30 selected series (selection rule in data/series_list.json); not committed",
+      "derived_from": "data/raw/electricity/electricity_hourly_dataset.zip",
+      "sha256": "e6f82c79be3392e80588087a85ca3625859b3619207cd90fb44eaa4dc59d74d8",
+      "bytes": 193985,
+      "rows": 1096,
+      "n_series": 30,
+      "frequency": "daily",
+      "date_range": [
+        "2012-01-01",
+        "2014-12-31"
+      ],
+      "series_ids": [
+        "T2",
+        "T10",
+        "T20",
+        "T29",
+        "T37",
+        "T44",
+        "T53",
+        "T63",
+        "T71",
+        "T79",
+        "T87",
+        "T95",
+        "T105",
+        "T116",
+        "T131",
+        "T145",
+        "T162",
+        "T175",
+        "T189",
+        "T198",
+        "T207",
+        "T215",
+        "T222",
+        "T231",
+        "T241",
+        "T250",
+        "T257",
+        "T265",
+        "T274",
+        "T283"
+      ],
+      "selected_positions_in_file": [
+        1,
+        9,
+        19,
+        28,
+        36,
+        43,
+        52,
+        62,
+        70,
+        78,
+        86,
+        94,
+        104,
+        115,
+        130,
+        144,
+        161,
+        174,
+        188,
+        197,
+        206,
+        214,
+        221,
+        230,
+        240,
+        249,
+        256,
+        264,
+        273,
+        282
+      ],
+      "selection_rule": "eligible = series with at most 3 zero hourly values in the whole span (the zeros that occur at the March clock-change hour in each of the 3 years are tolerated) and no missing values; take 30 eligible series at evenly spaced positions floor(i * n_eligible / 30), i = 0..29, in the file's original order",
+      "aggregation": "sum of hourly values per calendar day (UTC-naive timestamps as given)",
+      "n_zero_daily_totals": 0,
+      "source_url": "https://zenodo.org/records/4656140",
+      "download_date_utc": "2026-10-15",
+      "licence_note": "CC BY 4.0 (Zenodo record metadata; underlying UCI ElectricityLoadDiagrams20112014, Trindade 2015, also CC BY 4.0). Attribution required: Godahewa, R., Bergmeir, C., Webb, G., Hyndman, R. J., Montero-Manso, P. (2021). Electricity Hourly Dataset (Monash Time Series Forecasting Repository), Zenodo, doi:10.5281/zenodo.4656140; derived from Trindade, A. (2015). ElectricityLoadDiagrams20112014, UCI ML Repository, doi:10.24432/C58C86"
+    }
+  ]
+}
