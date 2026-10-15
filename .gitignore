@@ -1,0 +1,19 @@
+# environments and caches
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+*.egg-info/
+build/
+dist/
+# data: raw and processed data are never committed (see data/MANIFEST.json for hashes)
+data/raw/
+data/processed/
+# model/run caches
+results/cache/
+.cache/
+*.parquet
+*.pkl

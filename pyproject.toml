@@ -1,0 +1,11 @@
+[project]
+name = "forecasting-study"
+version = "0.1.0"
+description = "A pre-specified rolling-origin backtest of baselines, statistical and ML forecasters with calibrated prediction intervals"
+requires-python = ">=3.11"
+readme = "README.md"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q"
