@@ -1,0 +1,232 @@
+{
+  "protocol_tag": "protocol-v1",
+  "commit_at_final_invocation": "4ad1298f3a81c46a88642e285dfdcf3693047218",
+  "git_status_clean_outside_results": true,
+  "invocation_started_utc": "2026-10-15T21:05:52+00:00",
+  "invocation_finished_utc": "2026-10-16T08:45:43+00:00",
+  "frozen_config_sha256": "86214522e755c08cb2688ab393a59813cc58498187e79a665254b326add3d256",
+  "libraries": {
+    "python": "3.11.2",
+    "numpy": "2.4.6",
+    "pandas": "3.0.6",
+    "scipy": "1.17.1",
+    "statsmodels": "0.15.0",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.11.2"
+  },
+  "omp_num_threads": "1",
+  "strata": {
+    "monthly": {
+      "stratum": "monthly",
+      "n_series": 30,
+      "origins": [
+        351,
+        357,
+        363,
+        369,
+        375,
+        381,
+        387,
+        393
+      ],
+      "commits_in_cache": [
+        "4ad1298f3a81c46a88642e285dfdcf3693047218"
+      ],
+      "compute_seconds_ml_global": 267.32198639998387,
+      "compute_seconds_series_total": 38078.92647910003,
+      "compute_seconds_series": {
+        "RSAFSNA": 214.13094320001255,
+        "RSAFS": 125.11471829999937,
+        "RSMVPDN": 215.41196820000187,
+        "RSGCSN": 234.11111589999928,
+        "RSCCASN": 191.108682399994,
+        "RSNSRN": 189.78895309999643,
+        "RSBMGESDN": 183.0470304000046,
+        "RSFSDPN": 158.4385614000057,
+        "RSGASSN": 177.51963260000048,
+        "RSFHFSN": 183.9229728999926,
+        "INDPRO": 34715.652236199996,
+        "IPMAN": 46.63243280001916,
+        "IPB50001N": 128.35232540001743,
+        "IPG2211N": 98.48218890000135,
+        "IPG3361T3N": 115.43593750000582,
+        "CPIAUCNS": 128.58417280000867,
+        "CPILFESL": 80.7802883000113,
+        "CUUR0000SAF11": 96.97497330000624,
+        "CUUR0000SEHA": 150.28087489999598,
+        "CUUR0000SETB01": 79.02524930000072,
+        "CUUR0000SEHF01": 60.96229639998637,
+        "HOUST": 30.454251700022724,
+        "HOUSTNSA": 58.175559299997985,
+        "PERMIT": 34.318006000015885,
+        "TOTALSA": 72.5016340999864,
+        "TOTALNSA": 60.62384519999614,
+        "PAYNSA": 60.76571869998588,
+        "UNRATENSA": 61.712499699991895,
+        "TRFVOLUSM227NFWA": 56.41844489998766,
+        "M2SL": 70.19896529999096
+      },
+      "this_invocation_wall_s": 38347.53602679999,
+      "forecast_file": "forecasts_monthly.csv.gz",
+      "forecast_rows": 9600,
+      "fallback_counts": {
+        "ARIMA": {
+          "point": 0,
+          "cal": 0,
+          "mb": 0
+        },
+        "COMB": {
+          "point": 0,
+          "cal": 0,
+          "mb": 0
+        },
+        "DRIFT": {
+          "point": 0,
+          "cal": 0,
+          "mb": 0
+        },
+        "ETS": {
+          "point": 0,
+          "cal": 0,
+          "mb": 0
+        },
+        "ML-G": {
+          "point": 0,
+          "cal": 0,
+          "mb": 0
+        },
+        "ML-L": {
+          "point": 0,
+          "cal": 0,
+          "mb": 0
+        },
+        "NAIVE": {
+          "point": 0,
+          "cal": 0,
+          "mb": 0
+        },
+        "SMEAN": {
+          "point": 0,
+          "cal": 0,
+          "mb": 0
+        },
+        "SNAIVE": {
+          "point": 0,
+          "cal": 0,
+          "mb": 0
+        },
+        "THETA": {
+          "point": 0,
+          "cal": 0,
+          "mb": 0
+        }
+      }
+    },
+    "daily": {
+      "stratum": "daily",
+      "n_series": 30,
+      "origins": [
+        872,
+        900,
+        928,
+        956,
+        984,
+        1012,
+        1040,
+        1068
+      ],
+      "commits_in_cache": [
+        "4ad1298f3a81c46a88642e285dfdcf3693047218"
+      ],
+      "compute_seconds_ml_global": 188.8186017999833,
+      "compute_seconds_series_total": 3457.982336800109,
+      "compute_seconds_series": {
+        "T2": 92.94036070001312,
+        "T10": 81.04323660000227,
+        "T20": 153.75763870001538,
+        "T29": 144.7314377000148,
+        "T37": 165.868215399998,
+        "T44": 169.89373089998844,
+        "T53": 145.3120400000189,
+        "T63": 131.89735399998608,
+        "T71": 104.79785879998235,
+        "T79": 160.4725061999925,
+        "T87": 131.91483369999332,
+        "T95": 145.53635480001685,
+        "T105": 110.74402050001663,
+        "T116": 151.2260290000122,
+        "T131": 85.12461960001383,
+        "T145": 80.46603650000179,
+        "T162": 83.52554410000448,
+        "T175": 82.44117330000154,
+        "T189": 162.24485889999778,
+        "T198": 78.37258049999946,
+        "T207": 82.1362202000164,
+        "T215": 172.5734180000145,
+        "T222": 85.82161350001115,
+        "T231": 82.50432989999535,
+        "T241": 80.50305299999309,
+        "T250": 82.04140020001796,
+        "T257": 154.11359649998485,
+        "T265": 98.57333350001136,
+        "T274": 80.50697260000743,
+        "T283": 76.89796949998708
+      },
+      "this_invocation_wall_s": 3648.069581399992,
+      "forecast_file": "forecasts_daily.csv.gz",
+      "forecast_rows": 9600,
+      "fallback_counts": {
+        "ARIMA": {
+          "point": 0,
+          "cal": 0,
+          "mb": 0
+        },
+        "COMB": {
+          "point": 0,
+          "cal": 0,
+          "mb": 0
+        },
+        "DRIFT": {
+          "point": 0,
+          "cal": 0,
+          "mb": 0
+        },
+        "ETS": {
+          "point": 0,
+          "cal": 0,
+          "mb": 0
+        },
+        "ML-G": {
+          "point": 0,
+          "cal": 0,
+          "mb": 0
+        },
+        "ML-L": {
+          "point": 0,
+          "cal": 0,
+          "mb": 0
+        },
+        "NAIVE": {
+          "point": 0,
+          "cal": 0,
+          "mb": 0
+        },
+        "SMEAN": {
+          "point": 0,
+          "cal": 0,
+          "mb": 0
+        },
+        "SNAIVE": {
+          "point": 0,
+          "cal": 0,
+          "mb": 0
+        },
+        "THETA": {
+          "point": 0,
+          "cal": 0,
+          "mb": 0
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+model,fb_point,fb_cal,fb_mb,n_forecast_rows
+NAIVE,0,0,0,960
+SNAIVE,0,0,0,960
+DRIFT,0,0,0,960
+SMEAN,0,0,0,960
+ETS,0,0,0,960
+ARIMA,0,0,0,960
+THETA,0,0,0,960
+ML-G,0,0,0,960
+ML-L,0,0,0,960
+COMB,0,0,0,960
