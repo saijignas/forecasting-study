@@ -1,0 +1,44 @@
+# When do simple forecasts win? A pre-specified backtest on 30 monthly and 30 daily series
+
+## Question and scope
+On real business and economic series, when does a more complex model beat strong simple baselines, and are its prediction intervals honest? The study covers 30 US monthly series from FRED (1992-01 to 2025-09, confirmatory) and 30 daily electricity-load series (2012-2014, secondary replication), one test period, and no deep learning, foundation models or exogenous regressors. All claims below are conditional on that. The protocol (`docs/protocol.md`, tag `protocol-v1`) fixed hypotheses, series, splits, grids, metrics and decision rules before any model was fitted; the results follow those rules exactly, including where they say "inconclusive" or "not supported".
+
+## Design in brief
+* **Models.** Naive, seasonal naive (SNAIVE), drift, seasonal mean; ETS (18-configuration grid) and ARIMA (12-configuration SARIMAX grid), each chosen per series on a validation window; Theta; a gradient-boosted tree model with lag features trained globally across series (ML-G) or per series (ML-L); and an equal-weight combination of ETS, ARIMA and ML-G (COMB). `STAT*` is whichever of ETS and ARIMA scored better on validation.
+* **Backtest.** Expanding window, 8 test origins per series (monthly: 2021-03 to 2024-09, spacing 6 months, horizons 1/3/6/12; daily: 2014-05-21 to 2014-12-03, spacing 28 days, horizons 1/7/14/28). Primary metric MASE at horizon 12 (monthly) or 28 (daily). Tuning used a separate earlier validation window only (monthly targets up to 2019-12).
+* **Intervals.** Model-based (library) intervals for ETS, ARIMA and Theta; split-conformal intervals (36 monthly or 112 daily calibration origins, parameters frozen) for every model; nominal 80% and 95%.
+* **Inference.** Bootstrap over series (10,000 resamples), Holm correction over H1-H4 (confirmatory stratum only).
+* **Execution.** One run from commit `4ad1298` after the configurations were frozen and committed (python 3.11.2, statsmodels 0.15.0, scikit-learn 1.9.1). About 2.1 hours of single-process compute (the run log shows a longer wall time because the machine slept; see deviations row 6). No model failed or needed a fallback. Six clarifications and library workarounds were logged in the deviations log; none changed a hypothesis, series, split, grid or metric.
+
+## Results by hypothesis (monthly, confirmatory)
+| | Pre-set criterion | Observed | Holm-adj. p (for / against) | Outcome |
+|---|---|---|---|---|
+| H1 | ML-G beats SNAIVE by >= 0.03 MASE (h=12) on >= 60% of series | 10 of 30 (33%; bootstrap 95% CI 17-50%) | 1.000 / 0.012 | **Not supported** |
+| H2 | STAT* beats SNAIVE (h=12) on >= 60% of series | 14 of 30 (47%; CI 30-63%) | 1.000 / 0.202 | **Inconclusive** |
+| H3 | 6 conformal cells within +/-3 points of nominal; 4 model-based ETS/ARIMA cells more than 3 points below | 6 of 10 cells meet their criterion | 1.000 / 0.020 | **Not supported** |
+| H4 | Some pre-defined series type where no complex model beats SNAIVE | Met by one type (housing, 3 series) | 1.000 / 1.000 | **Inconclusive** (point estimate meets the criterion; not statistically established) |
+
+**H1 and H2.** At horizon 12 the mean MASE was 1.37 for SNAIVE, 1.12 for STAT*, 1.26 for ML-G and 1.04 for COMB, so the complex models are better on average, but the average is carried by a minority of series: ML-G beats SNAIVE by 0.03 MASE on a third of the series and STAT* beats it on under half. H1 is rejected by the rule; H2 is simply not resolved with 30 series (CI up to 63%). Descriptive extras: ETS alone wins on 43% of series, ARIMA alone on 50%, and STAT* beats ML-G on 80%. The per-series Wilcoxon tests (secondary, not used for decisions) found no significant difference for ETS, ARIMA, STAT* or ML-G.
+
+**H3.** Split-conformal intervals reached 95% coverage within the band for all three models (ETS 0.968, ARIMA 0.968, ML-G 0.963) but over-covered at the 80% level (0.877, 0.880, 0.856; band 0.77-0.83), so three of the six H3a cells fail. Model-based intervals under-covered clearly for ARIMA (0.758 at 80%, 0.871 at 95%) and for ETS at 95% (0.908), but ETS at 80% (0.796) was within the band. Because H3 is a conjunction of ten cells, the pre-set rule returns "not supported". Read as a pattern rather than a verdict: model-based intervals are too narrow, the 95% conformal intervals are about right, the 80% conformal intervals are wider than necessary. Model-based ARIMA coverage is lowest at h=1 (0.68 at 80%). A possible reason for the 80% over-coverage is that the calibration windows of the first test origins contain the 2020 shock; this was not tested.
+
+**H4.** One of the 12 examined types satisfied the rule: the housing group (HOUST, HOUSTNSA, PERMIT; every complex model wins on at most a third of them and the median difference is non-positive). In 61.8% of bootstrap replicates some type satisfied the rule, so p+ = 0.38 and the existence claim is not established. The type search is data-dependent and the housing group has three series including an SA/NSA twin pair; "housing is a seasonal-naive-friendly sector" is not a finding. Per series, SNAIVE was at least as good as all six complex models on 6 of 30 monthly series.
+
+## Secondary stratum (daily electricity, no Holm; labelled replication)
+At horizon 28 mean MASE was 1.62 for SNAIVE, 1.34 for ML-L, 1.47 for ML-G, 1.45 for COMB and 1.60 for STAT*. H1: ML-G beat SNAIVE by 0.03 on exactly 18 of 30 series (60%, CI 43-77%): the point criterion is met but p+ = 0.57, inconclusive. H2: STAT* beat SNAIVE on 19 of 30 (63%), p+ = 0.42, inconclusive. H3: conformal coverage was within 3 points for all six cells (80%: 0.790, 0.787, 0.780; 95%: 0.941, 0.934, 0.921), but model-based ETS and ARIMA intervals over-covered (0.916 and 0.894 at 80%, 0.979 and 0.973 at 95%), the opposite of the H3b prediction, so H3 is not supported by the rule. Conformal coverage falls at h=28 (0.67-0.69 at 80% for ETS and ARIMA). H4 is descriptive only: no complex model beat SNAIVE by 0.03 on 2 of 30 series.
+
+## Where simple baselines win
+* The reference benchmark is weaker than it looks at short horizons and identical to NAIVE at the reference horizon. Because 12 and 28 are multiples of the seasonal period, SNAIVE and NAIVE are the same forecast at h=12 (monthly) and h=28 (daily); at h=1 SNAIVE is far worse than NAIVE (monthly MASE 2.26 vs 0.70). DRIFT (1.12) is as good as STAT* at h=12.
+* Per-series winners at h=12 (descriptive): NAIVE, DRIFT or the seasonal mean had the lowest MASE on 15 of 30 monthly series; the best single model per series was COMB on 5, THETA 3, and each of ETS, ARIMA, ML-G 2, ML-L 1. The seasonal mean is the worst baseline on average (3.40) yet best on some series.
+* The per-series gradient-boosted model (ML-L) is worse than the global one (1.60 vs 1.26 monthly) with at most about 400 training rows per series. At daily horizon 28 it was best (1.34), with 700+ rows per series.
+* Exploratory, not a hypothesis test and not corrected for multiplicity: COMB had the lowest monthly mean MASE at h=6 and h=12 and beat SNAIVE on 60% of series (margin 0); Theta beat SNAIVE on 73% (CI 57-87%).
+
+## Limits
+* 30 series per stratum. Win-rate resolution is 1/30 and bootstrap CIs are wide (about +/-17 points). Series are not independent (SA/NSA twins, total and components) and the series bootstrap ignores that, so the real uncertainty is larger than reported.
+* One test period. The monthly test targets (2021-04 to 2025-09) follow the pandemic and include the inflation shock; the daily test is seven months of one year. The validation window ends in 2019-12, so the tuned configurations were chosen on a calm period; the chosen ML-G configuration (31 leaves, 300 iterations) is at the grid edge in both strata, so a larger grid might do better.
+* Split-conformal coverage is empirical here, without guarantees, because residuals are not exchangeable. Calibration windows and the conformal rule are fixed by the protocol, not tuned.
+* Theta calibration forecasts re-estimate parameters instead of freezing them (deviations row 3); ETS simulated intervals needed a library workaround (row 2).
+* No code or analysis was changed after seeing test results; tables and figures were generated once from the saved forecasts, after smoke tests on synthetic data.
+
+## What this does not show
+It does not show that gradient boosting is generally worse than ETS or ARIMA, that SNAIVE is a good benchmark, or that these coverages carry over to other series, countries or regimes. It does not show why conformal intervals over-covered at 80%. It says nothing about deep learning, foundation models, exogenous information or probabilistic models beyond the intervals above. "Inconclusive" means the sample could not decide the pre-set question, not that the effect is absent.
