@@ -74,9 +74,10 @@ FRED values can be revised, so a fresh download may differ from the hashes in th
 `results/run_meta.json` records the versions used.
 
 ## Licence and attribution
-Code: not yet licensed (the owner must choose a licence before publishing). Data: see `data/MANIFEST.json`.
-Electricity data: CC BY 4.0, Godahewa et al. (2021), Monash Time Series Forecasting Repository, derived from
-Trindade (2015), UCI ML Repository. FRED data: source agencies as listed in `data/series_list.json`, accessed via
-FRED; FRED terms allow personal, non-commercial and educational use with citation, so raw FRED files are not
-redistributed here (only hashes and the download script). The forecast tables in `results/` are derived
-numbers; check the FRED terms before republishing them beyond this study.
+Code: MIT (see `LICENSE`). Electricity data: CC BY 4.0, Godahewa et al. (2021), Monash Time Series Forecasting
+Repository, derived from Trindade (2015), UCI ML Repository. Monthly data: all 30 series come from US federal
+statistical agencies (Census Bureau, Bureau of Labor Statistics, Federal Reserve Board, Bureau of Economic Analysis,
+Federal Highway Administration), accessed via FRED (Federal Reserve Bank of St. Louis, fred.stlouisfed.org); please
+cite the agencies and FRED if you reuse the numbers. Raw data files are not redistributed here (only hashes and the
+download script); the `actual` column in `results/forecasts_*.csv.gz` repeats the observed values used for scoring.
+This is not legal advice; check the FRED and agency terms before reusing the data beyond this study.
