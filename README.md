@@ -3,53 +3,80 @@
 **Working title:** *When do simple forecasts win? A pre-specified backtest of baselines, statistical and ML
 models with calibrated prediction intervals.*
 
-**Status: Phase 1 of 2 (protocol and infrastructure). There are no results yet.** No forecasting model has been
-fitted or scored on the real data. Everything below describes what has been committed so far and what is still to do.
+**Status: Phase 2 complete.** The protocol ([`docs/protocol.md`](docs/protocol.md), git tag `protocol-v1`) was
+committed before any model was fitted; the models were tuned on a validation window only; the confirmatory backtest
+was run once from a clean commit. The write-up is [`docs/report.md`](docs/report.md).
 
 ## Question
 On real monthly and daily business/economic series, when does a more complex model beat strong simple baselines,
-and are its prediction intervals honest? Four hypotheses (H1-H4) with numeric decision rules are fixed in
-[`docs/protocol.md`](docs/protocol.md), which was committed and tagged `protocol-v1` before any metric or harness
-code that touches real data was written.
+and are its prediction intervals honest? Four hypotheses (H1-H4) with numeric decision rules are fixed in the
+protocol.
+
+## Results summary
+Monthly (30 FRED series, confirmatory, Holm over H1-H4), outcomes by the pre-set decision rules:
+
+| | Observed | Outcome |
+|---|---|---|
+| H1: ML-G beats seasonal naive by >= 0.03 MASE on >= 60% of series (h=12) | 10 of 30 (33%) | **Not supported** |
+| H2: validation-selected ETS/ARIMA beats seasonal naive on >= 60% of series | 14 of 30 (47%) | **Inconclusive** |
+| H3: conformal coverage within 3 points of nominal and model-based ETS/ARIMA under-cover | 6 of 10 cells meet their criterion | **Not supported** |
+| H4: some pre-defined series type where no complex model beats seasonal naive | met by one type (housing, 3 series) | **Inconclusive** (not statistically established) |
+
+Secondary daily replication (no Holm): H1 and H2 inconclusive (point criteria met, H1 exactly at 18 of 30), H3 not
+supported (conformal intervals within 3 points everywhere, but model-based intervals over-cover). Mean MASE at the
+reference horizon: monthly seasonal naive 1.37, combination 1.04, ETS/ARIMA choice 1.12, global gradient boosting
+1.26; the average gains come from a minority of series. At the reference horizon seasonal naive is the same forecast
+as naive. Details, limits and what the study does not show are in [`docs/report.md`](docs/report.md); all
+numbers are in `results/tables/summary.md` and `results/hypotheses_*.json`.
 
 ## Scope (honest)
 * Data: 30 US monthly series from FRED (1992-01 to 2025-09) and 30 daily electricity-load series (2012-2014,
   aggregated from the Monash/UCI hourly data). Public data only; raw data is **not** redistributed here
   (see `data/MANIFEST.json` for URLs, hashes and licence notes; run `scripts/download_data.py` to fetch it).
-* Methods (Phase 2): naive, seasonal naive, drift, seasonal mean, ETS, ARIMA, Theta, gradient boosting with lag
-  features (global and per-series), an equal-weight combination, and split-conformal intervals.
+* Methods: naive, seasonal naive, drift, seasonal mean, ETS, ARIMA, Theta, gradient boosting with lag features
+  (global and per-series), an equal-weight combination, model-based and split-conformal intervals.
 * Not covered: deep learning, foundation models, exogenous regressors, hierarchical reconciliation, probabilistic
   models beyond the intervals above, any data outside the two sources.
-* What a finished study could and could not show: it is a backtest on 60 series from two sources, not a general
-  ranking of methods. The series are correlated with each other (e.g. seasonally adjusted/unadjusted twins), the
-  test period contains the post-pandemic inflation shock, and a single run of 8 origins per series is a small sample.
+* It is a backtest on 60 series from two sources over one period (8 origins per series), not a general ranking of
+  methods. The series are correlated with each other (e.g. seasonally adjusted/unadjusted twins), the monthly test
+  period contains the post-pandemic inflation shock, and the series bootstrap ignores the cross-correlation.
 
-## What exists in Phase 1
+## Layout
 | Path | Content |
 |---|---|
-| `docs/protocol.md` | Full pre-specified protocol, tagged `protocol-v1`, with a deviations log |
-| `data/series_list.json` | The pre-specified series list with the reason each was chosen |
-| `scripts/download_data.py` | Downloads the data, writes `data/MANIFEST.json` (URL, date, SHA-256, rows, range, licence) |
-| `scripts/plot_raw_sanity.py` | Raw sanity plots (`results/figures/raw_*.png`); no model is fitted |
-| `src/forecasting_study/` | Metrics, rolling-origin splitter, four baselines, lag-feature builder, split-conformal code |
-| `tests/` | Unit tests (metrics vs hand-computed values, split-leakage test, feature-leakage test, conformal coverage test on synthetic data) |
-| `.github/workflows/tests.yml` | CI that runs the tests (configured, not yet run on GitHub) |
+| `docs/protocol.md` | Pre-specified protocol (tag `protocol-v1`) with an append-only deviations log (section 15) |
+| `docs/report.md` | The report (about 1,500 words) |
+| `config/frozen_configs.json` | Configurations chosen on the validation window, committed before the confirmatory run |
+| `data/series_list.json`, `data/MANIFEST.json` | Pre-specified series list; URLs, hashes, licence notes |
+| `src/forecasting_study/` | Metrics, splits, baselines, features, ETS/ARIMA/Theta wrappers, gradient boosting, conformal, pipeline, validation, statistics, evaluation, tables |
+| `scripts/` | `download_data.py`, `plot_raw_sanity.py`, `run_validation.py`, `run_confirmatory.py`, `make_tables.py` |
+| `results/forecasts_*.csv.gz` | Every raw test-origin forecast, interval and scale (input of all tables) |
+| `results/run_meta.json`, `results/run_log.jsonl` | Commit hash, library versions and timings of the confirmatory run |
+| `results/hypotheses_*.json`, `results/tables/`, `results/figures/` | Decisions, tables, figures (regenerated by `make_tables.py`) |
+| `results/validation/` | Validation scores of every configuration |
+| `tests/` | Unit tests on synthetic data (metrics, splits, leakage, wrappers, conformal, statistics) |
 
 ## Reproduce
+Requires Python 3.11 and about 1 GB of free memory; the full pipeline takes roughly 3 to 4 hours single-threaded.
 ```
 py -3.11 -m venv .venv
 .venv\Scripts\python -m pip install -r requirements.lock
-.venv\Scripts\python -I scripts/download_data.py        # fetch data + write data/MANIFEST.json
-.venv\Scripts\python -m pytest
+.venv\Scripts\python -I scripts/download_data.py                  # fetch data + write data/MANIFEST.json
+.venv\Scripts\python -m pytest                                    # unit tests
+set OMP_NUM_THREADS=1
+.venv\Scripts\python -I scripts/run_validation.py --stratum both --freeze   # tune on the validation window only
+git add config results/validation && git commit -m "Freeze configurations"  # the confirmatory run needs a clean tree
+.venv\Scripts\python -I scripts/run_confirmatory.py --stratum both  # the single confirmatory run (resumable)
+.venv\Scripts\python -I scripts/make_tables.py                      # tables, figures, decisions
 ```
 FRED values can be revised, so a fresh download may differ from the hashes in the manifest; compare with
-`python -I scripts/download_data.py --verify`.
-
-## Phase 2 (not started)
-Fit ETS, ARIMA, Theta and the gradient-boosted models, tune only on the validation window defined in the protocol,
-run the confirmatory backtest once, regenerate all tables from one script, write `docs/report.md`.
+`python -I scripts/download_data.py --verify`. Different library versions may change numerical results slightly;
+`results/run_meta.json` records the versions used.
 
 ## Licence and attribution
-Code: not yet licensed (choose before publishing). Data: see `data/MANIFEST.json`. Electricity data: CC BY 4.0,
-Godahewa et al. (2021), Monash Time Series Forecasting Repository, derived from Trindade (2015), UCI ML Repository.
-FRED data: source agencies as listed in `data/series_list.json`, accessed via FRED.
+Code: not yet licensed (the owner must choose a licence before publishing). Data: see `data/MANIFEST.json`.
+Electricity data: CC BY 4.0, Godahewa et al. (2021), Monash Time Series Forecasting Repository, derived from
+Trindade (2015), UCI ML Repository. FRED data: source agencies as listed in `data/series_list.json`, accessed via
+FRED; FRED terms allow personal, non-commercial and educational use with citation, so raw FRED files are not
+redistributed here (only hashes and the download script). The forecast tables in `results/` are derived
+numbers; check the FRED terms before republishing them beyond this study.
